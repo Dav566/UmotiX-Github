@@ -1,0 +1,43 @@
+
+.contacto {
+  padding: 60px 20px;
+  text-align: center;
+  background: #1d2736;
+  color: white;
+}
+
+.contacto h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contacto__form {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto__form input,
+.contacto__form textarea {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contacto__form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contacto__form button {
+  padding: 14px;
+  background: #5143e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
