@@ -1,8 +1,9 @@
-
 const OpenAI = require("openai");
 
+// Usamos la librería de OpenAI, pero apuntando a Groq (que es compatible)
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1",
 });
 
 const chatIA = async (req, res) => {
@@ -10,49 +11,35 @@ const chatIA = async (req, res) => {
     const { mensaje } = req.body;
 
     if (!mensaje || typeof mensaje !== "string" || !mensaje.trim()) {
-      return res.status(400).json({
-        respuesta: "Por favor, escribe un mensaje.",
-      });
+      return res.status(400).json({ respuesta: "Por favor, escribe un mensaje." });
     }
 
     if (mensaje.length > 1000) {
-      return res.status(400).json({
-        respuesta: "Tu mensaje es demasiado largo.",
-      });
+      return res.status(400).json({ respuesta: "Tu mensaje es demasiado largo." });
     }
 
-    const respuesta = await client.responses.create({
-      model: "gpt-5.5",
-      instructions: `
-        Eres UMOTIX AI, el asistente virtual de una tienda
-        colombiana de artículos deportivos.
-
-        Tu función es ayudar a los clientes a:
-        - Encontrar productos deportivos.
-        - Elegir artículos según el deporte que practican.
-        - Resolver dudas generales sobre la tienda.
-        - Recibir recomendaciones de compra.
-
-        Responde siempre en español, con amabilidad,
-        de forma clara y breve.
-
-        No inventes precios, disponibilidad, marcas ni
-        características de productos.
-
-        Si no conoces un dato específico, recomienda
-        consultar el catálogo de UMOTIX.
-      `,
-      input: mensaje,
-      max_output_tokens: 300,
+    const completion = await client.chat.completions.create({
+      model: "openai/gpt-oss-20b",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Eres UMOTIX AI, el asistente virtual de una tienda colombiana de artículos deportivos. " +
+            "Ayudas a los clientes a encontrar productos y a elegir según el deporte que practican. " +
+            "Responde siempre en español, con amabilidad y de forma breve. " +
+            "No inventes precios ni disponibilidad. Si no sabes un dato, recomienda revisar el catálogo de UMOTIX.",
+        },
+        { role: "user", content: mensaje },
+      ],
+      max_tokens: 1000,
+      reasoning_effort: "low",
     });
 
     return res.status(200).json({
-      respuesta: respuesta.output_text,
+      respuesta: completion.choices[0].message.content,
     });
-
   } catch (error) {
     console.error("Error en UMOTIX AI:", error.message);
-
     return res.status(500).json({
       respuesta: "No pude responder en este momento. Inténtalo nuevamente.",
     });

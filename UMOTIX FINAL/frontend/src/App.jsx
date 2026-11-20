@@ -9,7 +9,9 @@ import { products } from "./data/Products.js";
 import Cart from "./components/CATALOGO/Cart.jsx";
 import Contact from "./components/CONTACTO/Contact.jsx";
 import Admin from "./components/ADMIN/Admin.jsx";
-import Login from "./components/ADMIN/Login.jsx";
+import Login from "./components/ADMIN/login.jsx";
+import ChatIA from "./components/CHATBOT/ChatIA.jsx"
+
 
 function App() {
   const [search, setSearch] = useState("");
@@ -112,6 +114,7 @@ function App() {
           <Login onLogin={() => setAdminAutenticado(true)} />
         )}
       </section>
+      <ChatIA />
     </div>
   );
 }

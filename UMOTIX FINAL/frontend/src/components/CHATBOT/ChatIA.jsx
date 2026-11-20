@@ -30,7 +30,7 @@ function ChatIA() {
 
     try {
       const response = await fetch(
-        "https://umotix-backend.onrender.com",
+        "https://umotix-backend.onrender.com/api/ai/chat",
         {
           method: "POST",
           headers: {
