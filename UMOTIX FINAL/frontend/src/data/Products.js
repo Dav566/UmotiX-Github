@@ -4,5 +4,13 @@ export const products = [
     {id: 3, name: "Asics Metarise 2", price: 850000, category: "zapato", image: "https://www.asics.com.co/arquivos/ids/600538-1000-1000/1051A104_100_SB_FR_GLB.jpg"},
     {id: 4, name: "Asics Netburner Ballistic FF 4", price: 300000, category: "zapato", image: "https://www.asics.com.co/arquivos/ids/679177-1000-1000/1051A088_020_SL_LT_GLB.jpg"},
     {id: 5, name: "Mizuno Lighting Select", price: 500000, category: "zapato", image: "https://col.mizuno.com/wp-content/uploads/2026/07/68fc899325a22abea0e1509b_thumbnail-2.webp"},
-    
-    ];
+    {id: 6, name: "Balon Voleibol Molten V5M5000", price: 380000, category: "Balon_Voleibol", image : "https://sportpro.com.co/cdn/shop/files/4.V5M4000.jpg?v=1684267629"},
+    {id: 7, name: "Balon Voleibol Molten V5M4500", price: 220000, category: "Balon_Voleibol", image : "https://molten.com.co/cdn/shop/files/balon-de-voleibol-v5m4500-molten-2488286.png?v=1769487609"},
+    {id: 8, name: "Balon Voleibol Molten V5M4000", price: 200000, category: "Balon_Voleibol", image : "https://molten.com.co/cdn/shop/files/balon-de-voleibol-molten-vm4000.png?v=1756155089"},
+    {id: 9, name: "Balon Voleibol Mikasa V200W", price: 425000, category: "Balon_Voleibol", image : "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTjzPA1T8x6vXO8usqoRGn--QeetyWICCPu3Jp7fEK9Sq2YYHYMKbmXNsY0KvQA2j10vJ1GsX_TiEyfBLlkuH6DhcWDXVyMZHYVhxO1BG7gN2-tSkpLFAMm"}, 
+    {id: 10, name: "Balon Voleibol Mikasa V300W", price: 250000, category: "Balon_Voleibol", image : "https://m.media-amazon.com/images/I/61STrTHHI-L.jpg"},
+    {id: 11, name: "Medias Nike Negras (6 Pares)", price: 90000, category: "Medias", image : "https://nikeco.vtexassets.com/arquivos/ids/538464/SX7666_010_A_PREM.jpg?v=638463884049200000"},
+    {id: 12, name: "Medias Nike Blancas (6 Pares)", price: 90000, category: "Medias", image : "https://nikeco.vtexassets.com/arquivos/ids/416237/SX7669_100_A_PREM.jpg?v=638393913890930000"},
+    {id: 13, name: "Medias Asics Negras (3 Pares)", price: 50000, category: "Medias", image : "https://prochampions.vtexassets.com/arquivos/ids/1561567/Asics-3-Pack-Quarter-Sock-Medias-3-4_3033C299-001_01.png?v=639144531644100000"},
+    {id: 14, name: "Medias Asics Blancas (3 Pares)", price: 50000, category: "Medias", image : "https://asicsperu.vtexassets.com/arquivos/ids/953105/Medias-ASICS-3-Pack-Ankle-Sock-Brilliant-White-Unisex---0.jpg?v=639283712767970000"},
+];  
