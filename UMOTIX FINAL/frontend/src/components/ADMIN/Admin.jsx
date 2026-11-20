@@ -1,5 +1,5 @@
-
 import { useEffect, useState } from "react";
+import { API_URL } from "../../config.js";
 
 function Admin({ onLogout }) {
   const [contactos, setContactos] = useState([]);
@@ -9,7 +9,7 @@ function Admin({ onLogout }) {
   useEffect(() => {
     const token = localStorage.getItem("tokenAdmin");
 
-    fetch("http://localhost:5000/api/contact", {
+    fetch(`${API_URL}/api/contact`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

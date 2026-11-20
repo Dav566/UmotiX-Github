@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import "./Login.css";
+import { API_URL } from "../../config.js";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ function Login({ onLogin }) {
     setCargando(true);
 
     try {
-      const respuesta = await fetch("http://localhost:5000/api/auth/login", {
+      const respuesta = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

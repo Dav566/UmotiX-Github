@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import "./Contact.css";
+import { API_URL } from "../../config.js";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -20,7 +20,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -53,7 +53,6 @@ function Contact() {
           onChange={handleChange}
           required
         />
-
         <input
           type="email"
           name="email"
@@ -62,7 +61,6 @@ function Contact() {
           onChange={handleChange}
           required
         />
-
         <input
           type="tel"
           name="telefono"
@@ -70,7 +68,6 @@ function Contact() {
           value={form.telefono}
           onChange={handleChange}
         />
-
         <textarea
           name="mensaje"
           placeholder="Escribe tu mensaje"
@@ -78,7 +75,6 @@ function Contact() {
           onChange={handleChange}
           required
         />
-
         <button type="submit">Enviar mensaje</button>
       </form>
 

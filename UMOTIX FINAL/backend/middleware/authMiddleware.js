@@ -1,33 +1,11 @@
-
 const jwt = require("jsonwebtoken");
 
-const verificarAdmin = (req, res, next) => {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.status(401).json({
-      mensaje: "Acceso denegado. Debes iniciar sesión.",
-    });
-  }
-
+module.exports = (req, res, next) => {
+  const token = (req.headers.authorization || "").replace("Bearer ", "");
   try {
-    const datos = jwt.verify(
-      token.replace("Bearer ", ""),
-      process.env.JWT_SECRET
-    );
-
-    if (datos.rol !== "admin") {
-      return res.status(403).json({
-        mensaje: "No tienes permisos de administrador.",
-      });
-    }
-
+    jwt.verify(token, process.env.JWT_SECRET);
     next();
   } catch (error) {
-    return res.status(401).json({
-      mensaje: "Token inválido o vencido.",
-    });
+    res.status(401).json({ mensaje: "No autorizado" });
   }
 };
-
-module.exports = verificarAdmin;
