@@ -1,0 +1,115 @@
+
+.chatia-contenedor {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+}
+
+.chatia-boton {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #5141e8;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.chatia-ventana {
+  width: 320px;
+  height: 430px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatia-cabecera {
+  background: #1e293b;
+  color: white;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chatia-cabecera span {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.chatia-mensajes {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatia-mensaje {
+  max-width: 85%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chatia-mensaje.ia {
+  background: #e8e8f5;
+  align-self: flex-start;
+  color: #222;
+}
+
+.chatia-mensaje.usuario {
+  background: #5141e8;
+  color: white;
+  align-self: flex-end;
+}
+
+.chatia-formulario {
+  display: flex;
+  padding: 10px;
+  gap: 6px;
+  border-top: 1px solid #ddd;
+}
+
+.chatia-formulario input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+.chatia-formulario button {
+  background: #5141e8;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chatia-formulario button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+  .chatia-ventana {
+    width: calc(100vw - 40px);
+  }
+
+  .chatia-contenedor {
+    right: 15px;
+    bottom: 15px;
+  }
+}
