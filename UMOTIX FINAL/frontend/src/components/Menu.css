@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  gap: 12px;
+}
+
+.MenuProductos {
+  display: inline-block;
+  padding: 10px 22px;
+  background: rgb(243, 239, 239);
+  color: #000000fb;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid rgb(168, 168, 168);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.MenuProductos:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
